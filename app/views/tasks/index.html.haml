@@ -1,0 +1,31 @@
+#tasks
+
+:coffeescript
+  $ ->
+    window.router = new Teamwork.Routers.TasksRouter({tasks: #{@tasks.to_json.html_safe}})
+    Backbone.history.start()
+
+-#
+  %h1 Listing tasks
+
+  %table
+    %tr
+      %th Name
+      %th Text
+      %th End
+      %th
+      %th
+      %th
+
+    - @tasks.each do |task|
+      %tr
+        %td= task.name
+        %td= task.text
+        %td= task.end
+        %td= link_to 'Show', task
+        %td= link_to 'Edit', edit_task_path(task)
+        %td= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' }
+
+  %br
+
+  = link_to 'New Task', new_task_path

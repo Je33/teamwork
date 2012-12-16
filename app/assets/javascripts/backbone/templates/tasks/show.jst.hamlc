@@ -1,0 +1,10 @@
+%p
+  %b Name:
+  = @name
+%p
+  %b Text:
+  = @text
+%p
+  %b End:
+  = @end
+%a{:href => "#/index"} Back

@@ -1,0 +1,6 @@
+#tasks
+
+:coffeescript
+  $ ->
+    window.router = new Teamwork.Routers.TasksRouter({tasks: #{@tasks.to_json.html_safe}})
+    Backbone.history.start()

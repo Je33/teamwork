@@ -1,0 +1,9 @@
+%td= @name
+%td= @text
+%td= @end
+%td
+  %a{:href => "#/#{@id}"} Show
+%td
+  %a{:href => "#/#{@id}/edit"} Edit
+%td
+  %a.destroy{:href => "#/#{@id}/destroy"} Destroy
